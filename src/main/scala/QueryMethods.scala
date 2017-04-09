@@ -29,7 +29,7 @@ class QueryMethods {
   }
 
   /**
-    * Selecting videos that were uploaded after year 2017
+    * Selects videos that were uploaded after year 2017
     */
   def videoByYear() = {
     val result = session.execute("SELECT * FROM videobyyear WHERE year > 2015 ALLOW FILTERING ;")
@@ -39,7 +39,7 @@ class QueryMethods {
   }
 
   /**
-    * Selecting video by user_id and records are selected in descending order by year
+    * Selects video by user_id and records are selected in descending order by year
     *
     * @param userid
     */
