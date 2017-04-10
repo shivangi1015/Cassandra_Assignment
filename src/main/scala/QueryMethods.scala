@@ -14,7 +14,12 @@ class QueryMethods {
   def userByEmail(email: String) = {
     val result = session.execute(s"SELECT * from user where email = '$email';")
     println("Selecting user by email : ")
-    result.forEach(println(_))
+    val iterate = result.iterator()
+    while (iterate.hasNext) {
+
+      println(iterate.next())
+
+    }
   }
 
   /**
@@ -25,7 +30,12 @@ class QueryMethods {
   def videoByName(name: String) = {
     val result = session.execute(s"SELECT * FROM video WHERE video_name = '$name';")
     println("Selecting video by video_name : ")
-    result.forEach(println(_))
+    val iterate = result.iterator()
+    while (iterate.hasNext) {
+
+      println(iterate.next())
+
+    }
   }
 
   /**
@@ -34,7 +44,12 @@ class QueryMethods {
   def videoByYear() = {
     val result = session.execute("SELECT * FROM videobyyear WHERE year > 2015 ALLOW FILTERING ;")
     println("Selecting videos uploaded after 2015 : ")
-    result.forEach(println(_))
+    val iterate = result.iterator()
+    while (iterate.hasNext) {
+
+      println(iterate.next())
+
+    }
 
   }
 
@@ -46,7 +61,12 @@ class QueryMethods {
   def videoById(userid: Int) = {
     val result = session.execute(s"SELECT * FROM videobyyear WHERE userid = $userid ORDER BY year DESC ;")
     println("Selecting videos by user_id : ")
-    result.forEach(println(_))
+    val iterate = result.iterator()
+    while (iterate.hasNext) {
+
+      println(iterate.next())
+
+    }
 
   }
 }
