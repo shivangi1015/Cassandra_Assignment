@@ -9,7 +9,7 @@ class QueryMethods {
   /**
     * Selects user by given email
     *
-    * @param email email id if the user
+    * @param email email id of the user
     */
   def userByEmail(email: String) = {
     val result = session.execute(s"SELECT * from user where email = '$email';")
